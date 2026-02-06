@@ -13,10 +13,8 @@ const Header: React.FC<HeaderProps> = ({ onMenuOpen }) => {
                 aria-label="Open menu"
                 aria-haspopup="true"
             >
-                ☰
+                ☰ Menu
             </button>
-
-            <h1 className={styles.title}>Articles Study App</h1>
         </header>
     );
 };
