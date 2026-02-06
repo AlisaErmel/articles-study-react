@@ -9,9 +9,9 @@ const Home: React.FC = () => {
                 <h1>Articles Study App</h1>
             </header>
 
-            <main className="home-container">
+            <div className="home-container">
 
-                <nav aria-label="Main navigation">
+                <nav aria-label="Home actions">
                     <p>Choose an option to continue:</p>
                     <ul className="home-buttons">
                         <li>
@@ -45,7 +45,7 @@ const Home: React.FC = () => {
                         improve your skills in foreign languages.
                     </p>
                 </section>
-            </main>
+            </div>
         </>
     );
 };
