@@ -15,6 +15,10 @@ const Header: React.FC<HeaderProps> = ({ onMenuOpen }) => {
             >
                 ☰ Menu
             </button>
+
+            <h1 className={styles.title}>Articles Study App</h1>
+
+            <h1 className={styles.account}>Account</h1>
         </header>
     );
 };
