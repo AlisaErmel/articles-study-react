@@ -1,11 +1,12 @@
 .home-button {
     display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
     border: 2px solid #000;
     background-color: #fff;
     color: #000;
     text-decoration: none;
+    font-size: 20px;
 }
 
 a.home-button:hover,
@@ -16,9 +17,22 @@ a.home-button:focus-visible {
 
 ul.home-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 1rem;
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.highlight {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 95px;
+    height: 20px;
+    border-radius: 10%;
+    border: 3px solid #0033cc;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 5px;
 }

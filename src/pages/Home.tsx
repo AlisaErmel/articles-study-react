@@ -6,44 +6,51 @@ const Home: React.FC = () => {
     return (
         <>
             <header>
-                <h1>Articles Study App</h1>
+                <h1>Welcome to the App, where you can practice Articles!</h1>
             </header>
 
             <div className="home-container">
 
                 <nav aria-label="Home actions">
-                    <p>Choose an option to continue:</p>
+                    <h2>Choose what you want to do today:</h2>
                     <ul className="home-buttons">
                         <li>
                             <Link
                                 to="/modules"
                                 className="home-button"
                                 role="button"
-                                aria-label="Add or modify a module"
+                                aria-label="View a module"
                             >
-                                Add/Modify Module
+                                View Modules
                             </Link>
                         </li>
 
                         <li>
                             <Link
-                                to="/train"
+                                to="/add-module"
                                 className="home-button"
                                 role="button"
-                                aria-label="Train a module"
+                                aria-label="Create a module"
                             >
-                                Train Module
+                                Create Module
                             </Link>
                         </li>
                     </ul>
                 </nav>
 
                 <section aria-labelledby="info-section">
-                    <h2 id="info-section">How it works</h2>
-                    <p>
-                        Create modules with words and articles, then practice and test yourself to
-                        improve your skills in foreign languages.
-                    </p>
+                    <h3 id="info-section">How it works?</h3>
+                    <ul className="info">
+                        <li>
+                            Create a Module where you can add <span className="highlight">Noun</span>, <span className="highlight">Translation</span> and <span className="highlight">Article</span>.
+                        </li>
+                        <li>
+                            Start practice your Modules via exercises.
+                        </li>
+                        <li>
+                            Improve your skills in Foreign Languages!
+                        </li>
+                    </ul>
                 </section>
             </div>
         </>
