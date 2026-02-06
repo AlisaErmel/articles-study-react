@@ -1,19 +1,23 @@
 .home-button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0.5rem 1.5rem;
     border-radius: 30px;
     border: 2px solid #000;
     background-color: #fff;
     color: #000;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 
 a.home-button:hover,
 a.home-button:focus-visible {
-    outline: 3px solid #0033cc;
-    border: 2px solid #0033cc;
+    border-color: #0033cc;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(22, 72, 221, 0.615);
 }
+
 
 ul.home-buttons {
     display: flex;
@@ -21,14 +25,63 @@ ul.home-buttons {
     gap: 1rem;
     list-style: none;
     padding: 0;
+    margin-top: 25px;
+}
+
+.home-button img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.list-langauges {
+    display: flex;
+    align-items: last baseline;
+    gap: 20px;
+}
+
+/*.list-langauges h2 {
     margin: 0;
+}*/
+
+.list-langauges ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
+}
+
+.list-langauges li {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 42px;
+    border-radius: 20px;
+    border: 3px solid #000000;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 5px;
+    gap: 10px;
+}
+
+.list-langauges li img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.info {
+    font-size: 1.3rem;
 }
 
 .highlight {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 95px;
+    width: 115px;
     height: 20px;
     border-radius: 10%;
     border: 3px solid #0033cc;

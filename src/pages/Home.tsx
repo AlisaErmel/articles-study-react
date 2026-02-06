@@ -1,42 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import germany from '../assets/languages/germany.png';
+import spain from '../assets/languages/spain.png';
+import france from '../assets/languages/france.png';
+import italy from '../assets/languages/italy.png';
+import portugal from '../assets/languages/portugal.png';
+import netherlands from '../assets/languages/netherlands.png';
+import createmodule from '../assets/interface/create.svg';
+import viewmodules from '../assets/interface/modules.svg';
 
 const Home: React.FC = () => {
     return (
         <>
             <header>
-                <h1>Welcome to the App, where you can practice Articles!</h1>
+                <h1>Welcome to the App, where you can practice Article-based Languages!</h1>
             </header>
 
             <div className="home-container">
 
-                <nav aria-label="Home actions">
-                    <h2>Choose what you want to do today:</h2>
-                    <ul className="home-buttons">
-                        <li>
-                            <Link
-                                to="/modules"
-                                className="home-button"
-                                role="button"
-                                aria-label="View a module"
-                            >
-                                View Modules
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link
-                                to="/add-module"
-                                className="home-button"
-                                role="button"
-                                aria-label="Create a module"
-                            >
-                                Create Module
-                            </Link>
-                        </li>
+                <section aria-labelledby="supported-languages" className="list-langauges">
+                    <h2 id="supported-languages">Supported languages:</h2>
+                    <ul className="languages">
+                        <li><img src={germany} alt="Flag of Germany" /> German</li>
+                        <li><img src={spain} alt="Flag of Spain" /> Spanish</li>
+                        <li><img src={france} alt="Flag of France" /> French</li>
+                        <li><img src={italy} alt="Flag of Italy" /> Italian</li>
+                        <li><img src={portugal} alt="Flag of Portugal" /> Portuguese</li>
+                        <li><img src={netherlands} alt="Flag of Netherlands" /> Dutch</li>
                     </ul>
-                </nav>
+                </section>
 
                 <section aria-labelledby="info-section">
                     <h3 id="info-section">How it works?</h3>
@@ -52,6 +45,35 @@ const Home: React.FC = () => {
                         </li>
                     </ul>
                 </section>
+
+                <nav aria-label="Home actions">
+                    <h3>Choose what you want to do today:</h3>
+                    <ul className="home-buttons">
+                        <li>
+                            <Link
+                                to="/modules"
+                                className="home-button"
+                                role="button"
+                                aria-label="View a module"
+                            >
+                                <img src={viewmodules} alt="Icon of the button with the Graduation cap" />
+                                View Modules
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                                to="/add-module"
+                                className="home-button"
+                                role="button"
+                                aria-label="Create a module"
+                            >
+                                <img src={createmodule} alt="Icon of the button with pen and paper" />
+                                Create Module
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </>
     );
