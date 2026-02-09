@@ -4,7 +4,7 @@
     gap: 5px;
     padding: 0.5rem 1.5rem;
     border-radius: 30px;
-    border: 2px solid #000;
+    border: 3px solid #000;
     background-color: #fff;
     color: #000;
     text-decoration: none;
@@ -34,17 +34,17 @@ ul.home-buttons {
     object-fit: contain;
 }
 
-.list-langauges {
+.list-languages {
     display: flex;
     align-items: last baseline;
     gap: 20px;
 }
 
-/*.list-langauges h2 {
+/*.list-languages h2 {
     margin: 0;
 }*/
 
-.list-langauges ul {
+.list-languages ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -53,7 +53,7 @@ ul.home-buttons {
     gap: 10px;
 }
 
-.list-langauges li {
+.list-languages li {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +67,7 @@ ul.home-buttons {
     gap: 10px;
 }
 
-.list-langauges li img {
+.list-languages li img {
     width: 30px;
     height: 30px;
     object-fit: contain;
@@ -88,4 +88,69 @@ ul.home-buttons {
     font-weight: bold;
     text-decoration: none;
     margin: 0 5px;
+}
+
+/* ================= Tablet (max-width: 1024px) ================= */
+@media (max-width: 1024px) {
+    .home-button {
+        font-size: 1.8rem;
+        padding: 1rem 1.8rem;
+        border-radius: 46px;
+        justify-content: center;
+    }
+
+    ul.home-buttons {
+        flex-direction: row;
+        gap: 2rem;
+        margin-top: 30px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-button img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .list-languages ul.languages {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+
+    .list-languages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-languages li {
+        width: 25vw;
+        height: 6vw;
+        font-size: 1.5rem;
+        border-radius: 3vw;
+    }
+
+    .list-languages li img {
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .info {
+        font-size: 1.5rem;
+    }
+
+    .highlight {
+        width: 130px;
+        height: 20px;
+    }
+
+    h2#supported-languages {
+        font-size: 1.8rem;
+    }
+
+    h3#info-section,
+    h3 {
+        font-size: 1.5rem;
+    }
 }

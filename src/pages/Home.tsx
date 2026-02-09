@@ -19,7 +19,7 @@ const Home: React.FC = () => {
 
             <div className="home-container">
 
-                <section aria-labelledby="supported-languages" className="list-langauges">
+                <section aria-labelledby="supported-languages" className="list-languages">
                     <h2 id="supported-languages">Supported languages:</h2>
                     <ul className="languages">
                         <li><img src={germany} alt="Flag of Germany" /> German</li>
