@@ -94,8 +94,8 @@ ul.home-buttons {
 @media (max-width: 1024px) {
     .home-button {
         font-size: 1.8rem;
-        padding: 1rem 1.8rem;
-        border-radius: 46px;
+        padding: 0.8rem 1.8rem;
+        border-radius: 5vw;
         justify-content: center;
     }
 
@@ -108,8 +108,8 @@ ul.home-buttons {
     }
 
     .home-button img {
-        width: 48px;
-        height: 48px;
+        width: 4vw;
+        height: 4vw;
     }
 
     .list-languages ul.languages {
@@ -152,5 +152,114 @@ ul.home-buttons {
     h3#info-section,
     h3 {
         font-size: 1.5rem;
+    }
+}
+
+/* ================= Small tablet (max-width: 768px) ================= */
+@media (max-width: 768px) {
+    .home-button {
+        font-size: 1.5rem;
+        padding: 0.8rem 1.5rem;
+        border-radius: 40px;
+        justify-content: center;
+    }
+
+    ul.home-buttons {
+        flex-direction: row;
+        gap: 1.8rem;
+        margin-top: 30px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-button img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .list-languages li {
+        width: 25vw;
+        height: 6vw;
+        font-size: 1.3rem;
+        border-radius: 6vw;
+        padding: 0.2vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1vw;
+    }
+}
+
+/* ================= Mobile (max-width: 570px) ================= */
+@media (max-width: 570px) {
+    .home-button {
+        font-size: 1.6rem;
+        padding: 0.5rem 1.2rem;
+        border-radius: 40px;
+        justify-content: center;
+    }
+
+    ul.home-buttons {
+        flex-direction: column;
+        gap: 1.8rem;
+        margin-top: 30px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-button img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .list-languages ul.languages {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        gap: 1rem;
+    }
+
+    .list-languages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-languages li {
+        width: 48vw;
+        height: 10vw;
+        font-size: 1.5rem;
+        border-radius: 5vw;
+        padding: 1.5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1vw;
+    }
+
+    .list-languages li img {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .info {
+        font-size: 1.3rem;
+        text-align: left;
+    }
+
+    .highlight {
+        width: 120px;
+        height: 16px;
+    }
+
+    h2#supported-languages {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    h3#info-section,
+    h3 {
+        font-size: 1.5rem;
+        text-align: center;
     }
 }

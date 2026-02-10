@@ -35,7 +35,7 @@ const Home: React.FC = () => {
                     <h3 id="info-section">How it works?</h3>
                     <ul className="info">
                         <li>
-                            Create a Module where you can add <span className="highlight">Noun</span>, <span className="highlight">Translation</span> and <span className="highlight">Article</span>.
+                            Create a Module where you can add <span className="highlight">Noun</span>, <span className="highlight">Translation</span> and <span className="highlight">Article</span>
                         </li>
                         <li>
                             Start practice your Modules via exercises.
