@@ -34,6 +34,7 @@ body {
   min-height: 100vh;
   background-color: #ffffff;
   color: #000000;
+  padding-top: 55px;
   /*display: flex;
   place-items: center*/
 }

@@ -14,7 +14,7 @@ const Home: React.FC = () => {
     return (
         <>
             <header>
-                <h1>Welcome to the App, where you can practice Article-based Languages!</h1>
+                <h1 className="welcome">Welcome to the App, where you can practice Article-based Languages!</h1>
             </header>
 
             <div className="home-container">

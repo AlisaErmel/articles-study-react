@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuOpen }) => {
                 ☰ Menu
             </button>
 
-            <img src={languages} alt="Icon which presents learning languages" />
+            <img src={languages} alt="Icon which presents learning languages" className={styles.logo} />
 
             <p className={styles.account}>Account</p>
         </header>
