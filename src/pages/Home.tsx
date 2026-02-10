@@ -7,8 +7,8 @@ import france from '../assets/languages/france.png';
 import italy from '../assets/languages/italy.png';
 import portugal from '../assets/languages/portugal.png';
 import netherlands from '../assets/languages/netherlands.png';
-import createmodule from '../assets/interface/add.png';
-import viewmodules from '../assets/interface/graduation-cap.png';
+import createmodule from '../assets/interface/add.svg';
+import viewmodules from '../assets/interface/graduation-cap.svg';
 
 const Home: React.FC = () => {
     return (

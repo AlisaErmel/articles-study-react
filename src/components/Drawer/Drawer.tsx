@@ -2,10 +2,10 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Drawer.module.css';
 
-import homeicon from '../../assets/interface/house-chimney.png';
-import modulesicon from '../../assets/interface/folder.png';
-import createmoduleicon from '../../assets/interface/folder-plus-circle.png';
-import testsicon from '../../assets/interface/web-test.png';
+import homeicon from '../../assets/interface/house-chimney.svg';
+import modulesicon from '../../assets/interface/folder.svg';
+import createmoduleicon from '../../assets/interface/folder-plus-circle.svg';
+import testsicon from '../../assets/interface/web-test.svg';
 
 interface DrawerProps {
     isOpen: boolean;
