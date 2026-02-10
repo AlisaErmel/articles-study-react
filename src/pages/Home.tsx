@@ -7,8 +7,8 @@ import france from '../assets/languages/france.png';
 import italy from '../assets/languages/italy.png';
 import portugal from '../assets/languages/portugal.png';
 import netherlands from '../assets/languages/netherlands.png';
-import createmodule from '../assets/interface/create.svg';
-import viewmodules from '../assets/interface/modules.svg';
+import createmodule from '../assets/interface/add.png';
+import viewmodules from '../assets/interface/graduation-cap.png';
 
 const Home: React.FC = () => {
     return (
@@ -56,7 +56,7 @@ const Home: React.FC = () => {
                                 role="button"
                                 aria-label="View a module"
                             >
-                                <img src={viewmodules} alt="Icon of the button with the Graduation cap" />
+                                <img src={viewmodules} alt="Icon of the button with the Graduation cap" className='go-button' />
                                 View Modules
                             </Link>
                         </li>
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
                                 role="button"
                                 aria-label="Create a module"
                             >
-                                <img src={createmodule} alt="Icon of the button with pen and paper" />
+                                <img src={createmodule} alt="Icon of the button with pen and paper" className='go-button' />
                                 Create Module
                             </Link>
                         </li>

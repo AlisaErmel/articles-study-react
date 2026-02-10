@@ -64,3 +64,57 @@
     align-items: center;
     justify-content: center;
 }
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .drawer {
+        width: 220px;
+        padding: 0.8rem;
+    }
+
+    .menuItem {
+        font-size: 1.3rem;
+        gap: 1rem;
+    }
+
+    .icon img {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+}
+
+/* Small Tablet */
+@media (max-width: 768px) {
+    .drawer {
+        width: 200px;
+        padding: 0.5rem;
+    }
+
+    .menuItem {
+        font-size: 1.2rem;
+        gap: 0.8rem;
+    }
+
+    .icon img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 570px) {
+    .drawer {
+        width: 180px;
+        padding: 0.5rem;
+    }
+
+    .menuItem {
+        font-size: 1rem;
+        gap: 0.5rem;
+    }
+
+    .icon img {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+}
