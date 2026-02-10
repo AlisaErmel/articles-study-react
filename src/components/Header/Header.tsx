@@ -1,4 +1,5 @@
 import styles from './Header.module.css';
+import languages from './../../assets/interface/language.png'
 
 interface HeaderProps {
     onMenuOpen: () => void;
@@ -16,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuOpen }) => {
                 ☰ Menu
             </button>
 
-            <p className={styles.title}>Articles Study App</p>
+            <img src={languages} alt="Icon which presents learning languages" />
 
             <p className={styles.account}>Account</p>
         </header>
