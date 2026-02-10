@@ -20,7 +20,7 @@
 }
 
 .closeButton {
-    font-size: 1rem;
+    font-size: 1.5rem;
     background: none;
     border: none;
     cursor: pointer;
@@ -36,13 +36,16 @@
 }
 
 .menuItem {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 0.7rem 1rem;
     text-decoration: none;
     color: #333;
     border-radius: 4px;
     margin-bottom: 0.3rem;
     transition: background-color 0.2s;
+    font-size: 1.5rem;
+    gap: 1.5rem;
 }
 
 .menuItem:hover {
@@ -52,4 +55,12 @@
 .active {
     font-weight: bold;
     background-color: #ccc;
+}
+
+.icon img {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -2,16 +2,21 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Drawer.module.css';
 
+import homeicon from '../../assets/interface/house-chimney.png';
+import modulesicon from '../../assets/interface/folder.png';
+import createmoduleicon from '../../assets/interface/folder-plus-circle.png';
+import testsicon from '../../assets/interface/web-test.png';
+
 interface DrawerProps {
     isOpen: boolean;
     onClose: () => void;
 }
 
 const pages = [
-    { path: '/', label: 'Home' },
-    { path: '/modules', label: 'Modules' },
-    { path: '/create-module', label: 'Create Module' },
-    { path: '/tests', label: 'Tests' },
+    { path: '/', label: 'Home', icon: <img src={homeicon} alt="Icon of the home" /> },
+    { path: '/modules', label: 'Modules', icon: <img src={modulesicon} alt="Icon of the folder or module" /> },
+    { path: '/create-module', label: 'Create Module', icon: <img src={createmoduleicon} alt="Icon of the module with plus" /> },
+    { path: '/tests', label: 'Tests', icon: <img src={testsicon} alt="Icon with correct and incorrect tests" /> },
 ];
 
 const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
@@ -39,6 +44,7 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
                             className={`${styles.menuItem} ${location.pathname === page.path ? styles.active : ''
                                 }`}
                         >
+                            <span className={styles.icon}>{page.icon}</span>
                             {page.label}
                         </Link>
                     </li>
