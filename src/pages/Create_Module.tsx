@@ -160,7 +160,6 @@ const Create_Module: React.FC = () => {
                             value={noun}
                             onChange={(e) => setNoun(e.target.value)}
                             required
-                            aria-required="true"
                         />
                     </div>
 
@@ -186,7 +185,6 @@ const Create_Module: React.FC = () => {
                             value={translation}
                             onChange={(e) => setTranslation(e.target.value)}
                             required
-                            aria-required="true"
                         />
                     </div>
 
