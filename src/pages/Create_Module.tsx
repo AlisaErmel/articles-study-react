@@ -107,20 +107,23 @@ const Create_Module: React.FC = () => {
 
             <div aria-hidden={showInfo}>
 
-                <h1>Create Your Own Module</h1>
+                <div className="header-with-info">
 
-                <button
-                    ref={infoButtonRef}
-                    onClick={() => setShowInfo(true)}
-                    className="info-button"
-                    aria-label="Open module information"
-                >
-                    ℹ Info
-                </button>
+                    <h1>Create Your Own Module</h1>
+
+                    <button
+                        ref={infoButtonRef}
+                        onClick={() => setShowInfo(true)}
+                        className="info-button"
+                        aria-label="Open module information"
+                    >
+                        ℹ Info
+                    </button>
+                </div>
 
                 <p id="module-description">
                     Create your own vocabulary module to practice articles with nouns.
-                    Articles are optional — you can train yourself to guess them.
+                    Articles are optional, if you want to practice also verbs, adjectives...
                 </p>
 
                 {/* Language Selection */}

@@ -63,7 +63,7 @@ const Home: React.FC = () => {
 
                         <li>
                             <Link
-                                to="/add-module"
+                                to="/createmodule"
                                 className="home-button"
                                 role="button"
                                 aria-label="Create a module"

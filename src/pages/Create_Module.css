@@ -21,3 +21,18 @@ button:focus-visible {
     outline: 3px solid #005fcc;
     outline-offset: 3px;
 }
+
+.header-with-info {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.info-button {
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #333;
+    padding: 0.5rem;
+}
