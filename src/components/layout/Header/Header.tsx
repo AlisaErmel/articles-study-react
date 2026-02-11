@@ -1,5 +1,5 @@
 import styles from './Header.module.css';
-import languages from './../../assets/interface/language.svg'
+import languages from './../../../assets/interface/language.svg'
 
 interface HeaderProps {
     onMenuOpen: () => void;

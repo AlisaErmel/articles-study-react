@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import Drawer from '../components/Drawer/Drawer';
-import Header from '../components/Header/Header';
+import Drawer from '../components/layout/Drawer/Drawer';
+import Header from '../components/layout/Header/Header';
 import '../styles/App.css';
 
 const Layout: React.FC = () => {
