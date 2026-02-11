@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './Create_Module.css';
+import UIInput from "../components/ui/Input";
 
 type Language =
     | "German"
@@ -153,42 +154,36 @@ const Create_Module: React.FC = () => {
                 <section aria-labelledby="add-noun-heading">
                     <h2 id="add-noun-heading">Add Noun</h2>
 
-                    <div>
-                        <label htmlFor="noun-input">
-                            Noun <span aria-hidden="true">*</span>
-                        </label>
-                        <input
-                            id="noun-input"
-                            type="text"
+                    <div className="input-layout">
+                        {/* Top input */}
+                        <UIInput
+                            label="Noun"
                             value={noun}
                             onChange={(e) => setNoun(e.target.value)}
                             required
+                            placeholder="Enter noun"
+                            size="large"
                         />
-                    </div>
 
-                    <div>
-                        <label htmlFor="article-input">
-                            Article (optional)
-                        </label>
-                        <input
-                            id="article-input"
-                            type="text"
-                            value={article}
-                            onChange={(e) => setArticle(e.target.value)}
-                        />
-                    </div>
+                        {/* Bottom row: Article + Translation */}
+                        <div className="input-row">
+                            <UIInput
+                                label="Article (optional)"
+                                value={article}
+                                onChange={(e) => setArticle(e.target.value)}
+                                placeholder="Enter article"
+                                size="small"
+                            />
 
-                    <div>
-                        <label htmlFor="translation-input">
-                            Translation <span aria-hidden="true">*</span>
-                        </label>
-                        <input
-                            id="translation-input"
-                            type="text"
-                            value={translation}
-                            onChange={(e) => setTranslation(e.target.value)}
-                            required
-                        />
+                            <UIInput
+                                label="Translation"
+                                value={translation}
+                                onChange={(e) => setTranslation(e.target.value)}
+                                required
+                                placeholder="Enter translation"
+                                size="large"
+                            />
+                        </div>
                     </div>
 
                     {/* Error message */}

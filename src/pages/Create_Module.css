@@ -36,3 +36,23 @@ button:focus-visible {
     color: #333;
     padding: 0.5rem;
 }
+
+/* Layout container */
+.input-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* Row for bottom inputs */
+.input-row {
+    display: contents;
+    gap: 0rem;
+}
+
+/* Make both inputs in the row equal width*/
+.input-row .ui-input-wrapper {
+    flex: 1;
+    min-width: 150px;
+}
