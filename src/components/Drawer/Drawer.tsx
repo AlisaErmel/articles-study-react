@@ -15,7 +15,7 @@ interface DrawerProps {
 const pages = [
     { path: '/', label: 'Home', icon: <img src={homeicon} alt="Icon of the home" /> },
     { path: '/modules', label: 'Modules', icon: <img src={modulesicon} alt="Icon of the folder or module" /> },
-    { path: '/create-module', label: 'Create Module', icon: <img src={createmoduleicon} alt="Icon of the module with plus" /> },
+    { path: '/createmodule', label: 'Create Module', icon: <img src={createmoduleicon} alt="Icon of the module with plus" /> },
     { path: '/tests', label: 'Tests', icon: <img src={testsicon} alt="Icon with correct and incorrect tests" /> },
 ];
 

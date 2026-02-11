@@ -38,7 +38,7 @@ const Home: React.FC = () => {
                             Create a Module where you can add <span className="highlight">Noun</span>, <span className="highlight">Translation</span> and <span className="highlight">Article</span>
                         </li>
                         <li>
-                            Start practice your Modules via exercises.
+                            Start practice your Modules via exercises
                         </li>
                         <li>
                             Improve your skills in Foreign Languages!
