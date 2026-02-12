@@ -123,14 +123,15 @@ const Create_Module: React.FC = () => {
                     </button>
                 </div>
 
-                {/* Language Selection */}
+                {/* Module Settings */}
                 <fieldset>
+                    <legend>Module Settings</legend>
+
                     <UISelect
                         id="language-select"
                         label="Choose language"
                         value={language}
                         onChange={(e) => setLanguage(e.target.value as Language)}
-                        descriptionId="module-description"
                         required
                         options={[
                             { value: "German", label: "German" },
@@ -141,6 +142,22 @@ const Create_Module: React.FC = () => {
                             { value: "Spanish", label: "Spanish" },
                         ]}
                     />
+                    {/*<UIInput
+                        id="module-name"
+                        label="Module Name"
+                        value={moduleName}
+                        onChange={(e) => setModuleName(e.target.value)}
+                        required
+                        placeholder="Enter module name"
+                    />
+
+                    <UIInput
+                        id="word-count"
+                        label="Number of words"
+                        value={entries.length.toString()}
+                        size="small"
+                        readOnly
+                    />*/}
                 </fieldset>
 
                 {/* Add Noun Section */}

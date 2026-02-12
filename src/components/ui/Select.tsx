@@ -12,7 +12,6 @@ interface SelectProps {
     value: string;
     onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
     options: SelectOption[];
-    descriptionId?: string;
     required?: boolean;
 }
 
@@ -22,7 +21,6 @@ const UISelect: React.FC<SelectProps> = ({
     value,
     onChange,
     options,
-    descriptionId,
     required = false,
 }) => {
     return (
@@ -39,8 +37,6 @@ const UISelect: React.FC<SelectProps> = ({
                     id={id}
                     value={value}
                     onChange={onChange}
-                    aria-describedby={descriptionId}
-                    aria-required={required}
                     required={required}
                     className="ui-select"
                 >

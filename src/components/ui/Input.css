@@ -34,6 +34,7 @@
     transform: translateY(-20);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     outline: none;
+    border-color: #0033cc;
 }
 
 .ui-input::placeholder {
