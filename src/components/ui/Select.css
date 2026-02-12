@@ -11,11 +11,13 @@
 .ui-select-container {
     position: relative;
     display: inline-block;
+    width: 15ch;
 }
 
 .ui-select {
     font-family: "Sour Gummy", Arial, sans-serif;
-    width: 15ch;
+    width: 100%;
+    box-sizing: border-box;
     padding: 0.8rem 2.5rem 0.8rem 1rem;
     font-size: 1rem;
     border-radius: 10px;
@@ -23,7 +25,6 @@
     appearance: none;
     background-color: white;
     transition: border 0.2s ease, box-shadow 0.2s ease;
-    background-image: url("../../assets/interface/arrow_down.svg");
     background-repeat: no-repeat;
     background-position: right 0.9rem center;
     background-size: 16px;
@@ -32,4 +33,24 @@
 .ui-select:focus {
     outline: none;
     border-color: #0033cc;
+}
+
+/* Rotate arrow only when container has "open" class */
+.ui-select-container::after {
+    content: "";
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    background-image: url("../../assets/interface/arrow_down.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.2s ease;
+    pointer-events: none;
+}
+
+.ui-select-container.open::after {
+    transform: translateY(-50%) rotate(180deg);
 }
