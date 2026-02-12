@@ -47,11 +47,6 @@ const UISelect: React.FC<SelectProps> = ({
                         </option>
                     ))}
                 </select>
-
-                {/* Custom arrow */}
-                <span className="ui-select-arrow" aria-hidden="true">
-                    ▾
-                </span>
             </div>
         </div>
     );
