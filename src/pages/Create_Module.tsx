@@ -19,6 +19,7 @@ interface NounEntry {
 
 const Create_Module: React.FC = () => {
     const [language, setLanguage] = useState<Language>("German");
+    const [moduleName, setModuleName] = useState("");
     const [noun, setNoun] = useState("");
     const [article, setArticle] = useState("");
     const [translation, setTranslation] = useState("");
@@ -122,114 +123,116 @@ const Create_Module: React.FC = () => {
                         ℹ Info
                     </button>
                 </div>
+                {/* Horizontal layout container */}
+                <div className="module-creator-container">
+                    {/* Module Settings */}
+                    <fieldset className="module-settings">
+                        <legend>Module Settings</legend>
 
-                {/* Module Settings */}
-                <fieldset>
-                    <legend>Module Settings</legend>
-
-                    <UISelect
-                        id="language-select"
-                        label="Choose language"
-                        value={language}
-                        onChange={(e) => setLanguage(e.target.value as Language)}
-                        required
-                        options={[
-                            { value: "German", label: "German" },
-                            { value: "French", label: "French" },
-                            { value: "Dutch", label: "Dutch" },
-                            { value: "Portuguese", label: "Portuguese" },
-                            { value: "Italian", label: "Italian" },
-                            { value: "Spanish", label: "Spanish" },
-                        ]}
-                    />
-                    {/*<UIInput
-                        id="module-name"
-                        label="Module Name"
-                        value={moduleName}
-                        onChange={(e) => setModuleName(e.target.value)}
-                        required
-                        placeholder="Enter module name"
-                    />
-
-                    <UIInput
-                        id="word-count"
-                        label="Number of words"
-                        value={entries.length.toString()}
-                        size="small"
-                        readOnly
-                    />*/}
-                </fieldset>
-
-                {/* Add Noun Section */}
-                <section aria-labelledby="add-noun-heading">
-                    <h2 id="add-noun-heading">Add Noun</h2>
-
-                    <div className="input-layout">
-                        {/* Top input */}
-                        <UIInput
-                            id="noun"
-                            label="Noun"
-                            value={noun}
-                            onChange={(e) => setNoun(e.target.value)}
+                        <UISelect
+                            id="language-select"
+                            label="Choose language"
+                            value={language}
+                            onChange={(e) => setLanguage(e.target.value as Language)}
                             required
-                            placeholder="Enter noun"
-                            size="large"
+                            options={[
+                                { value: "German", label: "German" },
+                                { value: "French", label: "French" },
+                                { value: "Dutch", label: "Dutch" },
+                                { value: "Portuguese", label: "Portuguese" },
+                                { value: "Italian", label: "Italian" },
+                                { value: "Spanish", label: "Spanish" },
+                            ]}
+                        />
+                        <UIInput
+                            id="module-name"
+                            label="Module Name"
+                            value={moduleName}
+                            onChange={(e) => setModuleName(e.target.value)}
+                            required
+                            placeholder="Enter module name"
+                            size="small"
                         />
 
-                        {/* Bottom row: Article + Translation */}
-                        <div className="input-row">
-                            <UIInput
-                                id="article"
-                                label="Article (optional)"
-                                value={article}
-                                onChange={(e) => setArticle(e.target.value)}
-                                placeholder="Enter article"
-                                size="small"
-                            />
+                        <UIInput
+                            id="word-count"
+                            label="Number of words"
+                            value={entries.length.toString()}
+                            size="small"
+                        />
+                    </fieldset>
 
+                    {/* Add Word Section */}
+                    <section aria-labelledby="add-word-heading">
+                        <h2 id="add-word-heading" className="add-word-heading">Add a Word</h2>
+
+                        <div className="input-layout">
+                            {/* Top input */}
                             <UIInput
-                                id="translation"
-                                label="Translation"
-                                value={translation}
-                                onChange={(e) => setTranslation(e.target.value)}
+                                id="noun"
+                                label="Noun"
+                                value={noun}
+                                onChange={(e) => setNoun(e.target.value)}
                                 required
-                                placeholder="Enter translation"
+                                placeholder="Enter noun"
                                 size="large"
                             />
+
+                            {/* Bottom row: Article + Translation */}
+                            <div className="input-row">
+                                <UIInput
+                                    id="article"
+                                    label="Article (optional)"
+                                    value={article}
+                                    onChange={(e) => setArticle(e.target.value)}
+                                    placeholder="Enter article"
+                                    size="middle"
+                                />
+
+                                <UIInput
+                                    id="translation"
+                                    label="Translation"
+                                    value={translation}
+                                    onChange={(e) => setTranslation(e.target.value)}
+                                    required
+                                    placeholder="Enter translation"
+                                    size="large"
+                                />
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Error message */}
-                    <div
-                        role="alert"
-                        aria-live="assertive"
-                        style={{ color: "red" }}
-                    >
-                        {error}
-                    </div>
+                        {/* Error message */}
+                        <div
+                            role="alert"
+                            aria-live="assertive"
+                            style={{ color: "red" }}
+                        >
+                            {error}
+                        </div>
 
-                    <button onClick={handleAdd}>
-                        Add noun
-                    </button>
-                </section>
+                        <button onClick={handleAdd}>
+                            Add a word
+                        </button>
+                    </section>
 
-                {/* Preview Section */}
-                <section aria-labelledby="preview-heading">
-                    <h2 id="preview-heading">Module Preview</h2>
+                    {/* Preview Section */}
+                    <section className="module-preview-section" aria-labelledby="preview-heading">
+                        <h2 id="preview-heading" className="preview-heading">Module Preview</h2>
 
-                    {entries.length === 0 ? (
-                        <p>No nouns added yet.</p>
-                    ) : (
-                        <ul>
-                            {entries.map((entry, index) => (
-                                <li key={index}>
-                                    {entry.article ? `${entry.article} ` : ""}
-                                    {entry.noun} – {entry.translation}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </section>
+                        {entries.length === 0 ? (
+                            <p>No words added yet.</p>
+                        ) : (
+                            <ul>
+                                {entries.map((entry, index) => (
+                                    <li key={index}>
+                                        {entry.article ? `${entry.article} ` : ""}
+                                        {entry.noun} – {entry.translation}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </section>
+                </div>
             </div>
         </>
     );

@@ -5,10 +5,10 @@ interface InputProps {
     id: string;
     label: string;
     value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     placeholder?: string;
     required?: boolean;
-    size?: "small" | "large";
+    size?: "small" | "middle" | "large";
 }
 
 const UIInput: React.FC<InputProps> = ({ id, label, value, onChange, placeholder, required, size = "large" }) => {

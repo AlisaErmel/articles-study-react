@@ -1,3 +1,58 @@
+/* Container for module settings + add noun */
+.module-creator-container {
+    display: flex;
+    gap: 6rem;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Module Settings column */
+.module-settings {
+    border: 4px solid #005fcc;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.module-settings legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #005fcc;
+    padding: 0 0.5rem;
+}
+
+/* Add Word column */
+.add-word-section {
+    flex: 2 1 400px;
+    display: flow-root;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.add-word-heading,
+.preview-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #005fcc;
+}
+
+.module-preview-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    border: none;
+    border-radius: 8px;
+    max-height: 600px;
+    overflow-y: auto;
+    /* scroll if too many words */
+    margin-top: 0;
+}
+
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -26,6 +81,12 @@ button:focus-visible {
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
+    justify-content: center;
+}
+
+.header-with-info h1 {
+    text-decoration: underline;
+    text-decoration-color: #005fcc;
 }
 
 .info-button {
@@ -48,7 +109,7 @@ button:focus-visible {
 /* Row for bottom inputs */
 .input-row {
     display: flow-root;
-    gap: 0rem;
+    gap: 1rem;
 }
 
 /* Make both inputs in the row equal width*/
