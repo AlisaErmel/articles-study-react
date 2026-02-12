@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Select.css";
 
 interface SelectOption {
@@ -25,39 +25,22 @@ const UISelect: React.FC<SelectProps> = ({
     descriptionId,
     required = false,
 }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleMouseDown = () => {
-        // Toggle isOpen manually on mouse click
-        setIsOpen((prev) => !prev);
-    };
-
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLSelectElement>) => {
-        // Toggle on Enter or Space
-        if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
-            setIsOpen((prev) => !prev);
-        }
-    };
-
     return (
         <div className="ui-select-wrapper">
             <label htmlFor={id} className="ui-select-label">
                 {label}
-                {required && <span aria-hidden="true"> *</span>}
+                {required && (
+                    <span aria-hidden="true"> (required)</span>
+                )}
             </label>
 
-            <div className={`ui-select-container ${isOpen ? "open" : ""}`}>
+            <div className="ui-select-container">
                 <select
                     id={id}
                     value={value}
-                    onChange={(e) => {
-                        onChange(e);
-                        setIsOpen(false); // Close arrow after selection
-                    }}
-                    onMouseDown={handleMouseDown} // toggle on click
-                    onKeyDown={handleKeyDown}
-                    onBlur={() => setIsOpen(false)} // close when clicking outside
+                    onChange={onChange}
                     aria-describedby={descriptionId}
+                    aria-required={required}
                     required={required}
                     className="ui-select"
                 >

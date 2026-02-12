@@ -25,17 +25,14 @@
     appearance: none;
     background-color: white;
     transition: border 0.2s ease, box-shadow 0.2s ease;
-    background-repeat: no-repeat;
-    background-position: right 0.9rem center;
-    background-size: 16px;
 }
 
-.ui-select:focus {
+.ui-select:focus-visible {
     outline: none;
     border-color: #0033cc;
 }
 
-/* Rotate arrow only when container has "open" class */
+/* Decorative arrow (always pointing down) */
 .ui-select-container::after {
     content: "";
     position: absolute;
@@ -46,11 +43,6 @@
     background-image: url("../../assets/interface/arrow_down.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    transform: translateY(-50%) rotate(0deg);
-    transition: transform 0.2s ease;
+    transform: translateY(-50%);
     pointer-events: none;
-}
-
-.ui-select-container.open::after {
-    transform: translateY(-50%) rotate(180deg);
 }
