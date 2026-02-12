@@ -1,7 +1,6 @@
 .ui-input-wrapper {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
 }
 
 /* screen-reader-only text */
@@ -59,9 +58,11 @@
 .ui-input-large {
     width: 22ch;
     font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .ui-input-middle {
     width: 7ch;
     font-size: 2rem;
+    margin-bottom: 1rem;
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './Create_Module.css';
 import UIInput from "../components/ui/Input";
 import UISelect from "../components/ui/Select";
+import doneIcon from "../assets/interface/done.svg";
 
 type Language =
     | "German"
@@ -23,7 +24,7 @@ const Create_Module: React.FC = () => {
     const [noun, setNoun] = useState("");
     const [article, setArticle] = useState("");
     const [translation, setTranslation] = useState("");
-    const [entries, setEntries] = useState<NounEntry[]>([]);
+    const [entries, setEntries] = useState<NounEntry[]>([{ noun: "Test", article: "die", translation: "testing" }]);
     const [error, setError] = useState("");
 
     const [showInfo, setShowInfo] = useState(true);
@@ -101,7 +102,7 @@ const Create_Module: React.FC = () => {
                             and practice them later.
                         </p>
 
-                        <button onClick={closeModal}>
+                        <button onClick={closeModal} aria-label="Close modal">
                             OK, start creating
                         </button>
                     </div>
@@ -154,12 +155,17 @@ const Create_Module: React.FC = () => {
                             size="small"
                         />
 
-                        <UIInput
-                            id="word-count"
-                            label="Number of words"
-                            value={entries.length.toString()}
-                            size="small"
-                        />
+                        <div className="word-count" aria-live="polite">
+                            <span className={`word-count-icon ${entries.length > 0 ? "active" : ""}`} aria-hidden="true">
+                                <img src={doneIcon} alt="" />
+                            </span>
+                            <span
+                                className="word-count-number"
+                                aria-label={entries.length === 0 ? "No words added" : `${entries.length} words added`}
+                            >
+                                {entries.length}
+                            </span>
+                        </div>
                     </fieldset>
 
                     {/* Add Word Section */}
