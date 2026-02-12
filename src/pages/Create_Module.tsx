@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './Create_Module.css';
 import UIInput from "../components/ui/Input";
+import UISelect from "../components/ui/Select";
 
 type Language =
     | "German"
@@ -122,32 +123,24 @@ const Create_Module: React.FC = () => {
                     </button>
                 </div>
 
-                <p id="module-description">
-                    Create your own vocabulary module to practice articles with nouns.
-                    Articles are optional, if you want to practice also verbs, adjectives...
-                </p>
-
                 {/* Language Selection */}
                 <fieldset>
-                    <legend>Select Language</legend>
-
-                    <label htmlFor="language-select">
-                        Choose language
-                    </label>
-
-                    <select
+                    <UISelect
                         id="language-select"
+                        label="Choose language"
                         value={language}
                         onChange={(e) => setLanguage(e.target.value as Language)}
-                        aria-describedby="module-description"
-                    >
-                        <option value="German">German</option>
-                        <option value="French">French</option>
-                        <option value="Dutch">Dutch</option>
-                        <option value="Portuguese">Portuguese</option>
-                        <option value="Italian">Italian</option>
-                        <option value="Spanish">Spanish</option>
-                    </select>
+                        descriptionId="module-description"
+                        required
+                        options={[
+                            { value: "German", label: "German" },
+                            { value: "French", label: "French" },
+                            { value: "Dutch", label: "Dutch" },
+                            { value: "Portuguese", label: "Portuguese" },
+                            { value: "Italian", label: "Italian" },
+                            { value: "Spanish", label: "Spanish" },
+                        ]}
+                    />
                 </fieldset>
 
                 {/* Add Noun Section */}

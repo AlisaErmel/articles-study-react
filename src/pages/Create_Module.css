@@ -47,7 +47,7 @@ button:focus-visible {
 
 /* Row for bottom inputs */
 .input-row {
-    display: contents;
+    display: flow-root;
     gap: 0rem;
 }
 

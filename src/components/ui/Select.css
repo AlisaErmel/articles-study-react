@@ -1,0 +1,41 @@
+.ui-select-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.ui-select-label {
+    font-weight: 500;
+}
+
+.ui-select-container {
+    position: relative;
+}
+
+.ui-select {
+    width: 100%;
+    padding: 0.8rem 2.5rem 0.8rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    appearance: none;
+    background-color: white;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ui-select:focus {
+    outline: none;
+    border-color: #0033cc;
+    box-shadow: 0 0 0 3px rgba(0, 51, 204, 0.2);
+}
+
+/* Custom arrow */
+.ui-select-arrow {
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 0.8rem;
+    color: #555;
+}
