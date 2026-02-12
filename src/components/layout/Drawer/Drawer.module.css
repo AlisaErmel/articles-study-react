@@ -48,7 +48,8 @@
     gap: 1.5rem;
 }
 
-.menuItem:hover {
+.menuItem:hover,
+.closeButton:hover {
     background-color: #ddd;
 }
 

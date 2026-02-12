@@ -21,25 +21,31 @@ const pages = [
 
 const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
     const location = useLocation();
-    const closeButtonRef = useRef<HTMLButtonElement>(null);
-    const firstLinkRef = useRef<HTMLAnchorElement>(null);
-    const lastLinkRef = useRef<HTMLAnchorElement>(null);
+    const drawerRef = useRef<HTMLElement>(null);
 
     // Focus trap + Escape key
     useEffect(() => {
-        if (!isOpen) return;
+        if (!isOpen || !drawerRef.current) return;
+
+        const focusableElements = Array.from(
+            drawerRef.current.querySelectorAll<HTMLElement>(
+                'a[href], button:not([disabled]), [tabindex="0"]'
+            )
+        );
+
+        if (focusableElements.length === 0) return;
+
+        const first = focusableElements[0];
+        const last = focusableElements[focusableElements.length - 1];
+
+        // Focus first element when drawer opens
+        first.focus();
 
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
                 onClose();
             }
             if (e.key === 'Tab') {
-                const focusable = [closeButtonRef.current, firstLinkRef.current, lastLinkRef.current].filter(Boolean) as HTMLElement[];
-                if (!focusable.length) return;
-
-                const first = focusable[0];
-                const last = focusable[focusable.length - 1];
-
                 if (e.shiftKey && document.activeElement === first) {
                     e.preventDefault();
                     last.focus();
@@ -51,20 +57,24 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
         };
 
         document.addEventListener('keydown', handleKeyDown);
-        // Focus first element
-        closeButtonRef.current?.focus();
-
         return () => document.removeEventListener('keydown', handleKeyDown);
     }, [isOpen, onClose]);
 
+    // Optionally remove focus from drawer when closing
+    useEffect(() => {
+        if (!isOpen && document.activeElement instanceof HTMLElement && drawerRef.current?.contains(document.activeElement)) {
+            document.activeElement.blur();
+        }
+    }, [isOpen]);
+
     return (
         <nav
+            ref={drawerRef}
             className={`${styles.drawer} ${isOpen ? styles.open : ''}`}
             aria-label="Main navigation"
-            aria-hidden={!isOpen}
+            {...(!isOpen ? { inert: true } : {})} // prevents focus and interaction when closed
         >
             <button
-                ref={closeButtonRef}
                 className={styles.closeButton}
                 onClick={onClose}
                 aria-label="Close menu"
@@ -74,16 +84,9 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
             </button>
 
             <ul className={styles.menu}>
-                {pages.map((page, index) => (
+                {pages.map((page) => (
                     <li key={page.path}>
                         <Link
-                            ref={
-                                index === 0
-                                    ? firstLinkRef
-                                    : index === pages.length - 1
-                                        ? lastLinkRef
-                                        : null
-                            }
                             to={page.path}
                             onClick={onClose}
                             className={`${styles.menuItem} ${location.pathname === page.path ? styles.active : ''}`}
