@@ -150,6 +150,7 @@ const Create_Module: React.FC = () => {
                     <div className="input-layout">
                         {/* Top input */}
                         <UIInput
+                            id="noun"
                             label="Noun"
                             value={noun}
                             onChange={(e) => setNoun(e.target.value)}
@@ -161,6 +162,7 @@ const Create_Module: React.FC = () => {
                         {/* Bottom row: Article + Translation */}
                         <div className="input-row">
                             <UIInput
+                                id="article"
                                 label="Article (optional)"
                                 value={article}
                                 onChange={(e) => setArticle(e.target.value)}
@@ -169,6 +171,7 @@ const Create_Module: React.FC = () => {
                             />
 
                             <UIInput
+                                id="translation"
                                 label="Translation"
                                 value={translation}
                                 onChange={(e) => setTranslation(e.target.value)}
