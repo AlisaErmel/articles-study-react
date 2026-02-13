@@ -3,6 +3,8 @@ import './Create_Module.css';
 import UIInput from "../components/ui/Input";
 import UISelect from "../components/ui/Select";
 import doneIcon from "../assets/interface/done.svg";
+import PlusIcon from "../assets/interface/plus.svg";
+import StartCreate from '../assets/interface/start_create.svg';
 
 type Language =
     | "German"
@@ -34,7 +36,7 @@ const Create_Module: React.FC = () => {
 
     const handleAdd = () => {
         if (!noun.trim() || !translation.trim()) {
-            setError("Noun and translation are required:)");
+            setError("Word and translation are required:)");
             return;
         }
 
@@ -102,8 +104,9 @@ const Create_Module: React.FC = () => {
                             and practice them later.
                         </p>
 
-                        <button onClick={closeModal} aria-label="Close modal">
+                        <button onClick={closeModal} className="close-module-button">
                             OK, start creating
+                            <img src={StartCreate} aria-hidden="true" />
                         </button>
                     </div>
                 </div>
@@ -216,7 +219,8 @@ const Create_Module: React.FC = () => {
                             {error}
                         </div>
 
-                        <button onClick={handleAdd}>
+                        <button type="button" onClick={handleAdd} className="add-button">
+                            <img src={PlusIcon} aria-hidden="true" />
                             Add a word
                         </button>
                     </section>

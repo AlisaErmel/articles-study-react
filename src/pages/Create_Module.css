@@ -71,12 +71,6 @@
     outline: none;
 }
 
-/* Focus visible */
-button:focus-visible {
-    outline: 3px solid #005fcc;
-    outline-offset: 3px;
-}
-
 .header-with-info {
     display: flex;
     align-items: baseline;
@@ -141,4 +135,40 @@ button:focus-visible {
 
 .word-count-number {
     line-height: 1;
+}
+
+.add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    border: none;
+    margin: 0rem auto 0 auto;
+}
+
+.add-button img {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Focus visible */
+.add-button:focus-visible {
+    outline: 4px solid #005fcc;
+}
+
+.close-module-button {
+    border: none;
+    gap: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.close-module-button img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.close-module-button:focus-visible {
+    outline: 4px solid #005fcc;
 }
