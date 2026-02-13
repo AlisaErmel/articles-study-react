@@ -131,7 +131,9 @@ const Create_Module: React.FC = () => {
                 <div className="module-creator-container">
                     {/* Module Settings */}
                     <fieldset className="module-settings">
-                        <legend>Module Settings</legend>
+                        <legend>
+                            <span className="section-number">1</span>Module Settings
+                        </legend>
 
                         <UISelect
                             id="language-select"
@@ -173,7 +175,9 @@ const Create_Module: React.FC = () => {
 
                     {/* Add Word Section */}
                     <section aria-labelledby="add-word-heading">
-                        <h2 id="add-word-heading" className="add-word-heading">Add a Word</h2>
+                        <h2 id="add-word-heading" className="add-word-heading">
+                            <span className="section-number">2</span>Add a Word
+                        </h2>
 
                         <div className="input-layout">
                             {/* Top input */}
@@ -227,7 +231,9 @@ const Create_Module: React.FC = () => {
 
                     {/* Preview Section */}
                     <section className="module-preview-section" aria-labelledby="preview-heading">
-                        <h2 id="preview-heading" className="preview-heading">Module Preview</h2>
+                        <h2 id="preview-heading" className="preview-heading">
+                            <span className="section-number">3</span>Module Preview
+                        </h2>
 
                         {entries.length === 0 ? (
                             <p>No words added yet.</p>

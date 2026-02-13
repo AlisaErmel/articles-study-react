@@ -172,3 +172,17 @@
 .close-module-button:focus-visible {
     outline: 4px solid #005fcc;
 }
+
+.section-number {
+    display: inline-block;
+    font-weight: bold;
+    color: #005fcc;
+    margin-right: 0.5rem;
+    font-size: 1.8rem;
+    background: #e6f0ff;
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+    text-align: center;
+    line-height: 1.8rem;
+}
