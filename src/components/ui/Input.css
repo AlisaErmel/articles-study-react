@@ -71,3 +71,56 @@
     font-size: 2rem;
     margin-bottom: 1rem;
 }
+
+/* Responsive breakpoints */
+
+/* Max width 1024px */
+@media (max-width: 1024px) {
+    .ui-input-large {
+        width: 18ch;
+        font-size: 1.8rem;
+    }
+
+    .ui-input-middle {
+        width: 8ch;
+        font-size: 1.8rem;
+    }
+
+    .ui-input-small {
+        font-size: 0.9rem;
+    }
+}
+
+/* Max width 768px */
+@media (max-width: 768px) {
+    .ui-input-large {
+        width: 16ch;
+        font-size: 1.6rem;
+    }
+
+    .ui-input-middle {
+        width: 9ch;
+        font-size: 1.6rem;
+    }
+
+    .ui-input-small {
+        font-size: 0.85rem;
+    }
+}
+
+/* Max width 570px */
+@media (max-width: 570px) {
+    .ui-input-large {
+        width: 20ch;
+        font-size: 1.4rem;
+    }
+
+    .ui-input-middle {
+        width: 10ch;
+        font-size: 1.4rem;
+    }
+
+    .ui-input-small {
+        font-size: 0.8rem;
+    }
+}
