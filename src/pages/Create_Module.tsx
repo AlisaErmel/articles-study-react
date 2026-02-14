@@ -91,7 +91,6 @@ const Create_Module: React.FC = () => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("visible");
-                        entry.target.removeAttribute("aria-hidden");
                     }
                 });
             },
@@ -142,7 +141,7 @@ const Create_Module: React.FC = () => {
                 <div className="module-creator-container">
 
                     {/* Module Settings + Header*/}
-                    <section id="module-settings" aria-label="Module Settings" inert={activeSection !== "module-settings"}>
+                    <section id="module-settings" aria-label="Module Settings">
                         {/*Header*/}
                         <div className="header-with-info">
 
@@ -153,6 +152,7 @@ const Create_Module: React.FC = () => {
                                 onClick={() => setShowInfo(true)}
                                 className="info-button"
                                 aria-label="Open module information"
+                                tabIndex={activeSection === "module-settings" ? 0 : -1}
                             >
                                 ℹ Info
                             </button>
@@ -178,6 +178,7 @@ const Create_Module: React.FC = () => {
                                     { value: "Italian", label: "Italian" },
                                     { value: "Spanish", label: "Spanish" },
                                 ]}
+                                tabIndex={activeSection === "module-settings" ? 0 : -1}
                             />
                             <UIInput
                                 id="module-name"
@@ -187,6 +188,7 @@ const Create_Module: React.FC = () => {
                                 required
                                 placeholder="Enter module name"
                                 size="small"
+                                tabIndex={activeSection === "module-settings" ? 0 : -1}
                             />
 
                             <div className="word-count" aria-live="polite">
@@ -213,7 +215,7 @@ const Create_Module: React.FC = () => {
                     </section>
 
                     {/* Add Word Section */}
-                    <section id="add-word" aria-labelledby="add-word-heading" inert={activeSection !== "add-word"}>
+                    <section id="add-word" aria-labelledby="add-word-heading">
 
                         {/* 2 → 1 (above 2nd section) */}
                         <ArrowButton
@@ -238,6 +240,7 @@ const Create_Module: React.FC = () => {
                                 required
                                 placeholder="Enter noun"
                                 size="large"
+                                tabIndex={activeSection === "add-word" ? 0 : -1}
                             />
 
                             {/* Bottom row: Article + Translation */}
@@ -249,6 +252,7 @@ const Create_Module: React.FC = () => {
                                     onChange={(e) => setArticle(e.target.value)}
                                     placeholder="Enter article"
                                     size="middle"
+                                    tabIndex={activeSection === "add-word" ? 0 : -1}
                                 />
 
                                 <UIInput
@@ -259,6 +263,7 @@ const Create_Module: React.FC = () => {
                                     required
                                     placeholder="Enter translation"
                                     size="large"
+                                    tabIndex={activeSection === "add-word" ? 0 : -1}
                                 />
                             </div>
                         </div>
@@ -272,7 +277,7 @@ const Create_Module: React.FC = () => {
                             {error}
                         </div>
 
-                        <button type="button" onClick={handleAdd} className="add-button">
+                        <button type="button" onClick={handleAdd} className="add-button" tabIndex={activeSection === "add-word" ? 0 : -1}>
                             <img src={PlusIcon} aria-hidden="true" />
                             Add a word
                         </button>
@@ -288,7 +293,7 @@ const Create_Module: React.FC = () => {
                     </section>
 
                     {/* Preview Section */}
-                    <section id="module-preview" className="module-preview-section" aria-labelledby="preview-heading" inert={activeSection !== "module-preview"}>
+                    <section id="module-preview" className="module-preview-section" aria-labelledby="preview-heading">
                         {/* 3 → 2 (above 3rd section) */}
                         <ArrowButton
                             targetId="add-word"

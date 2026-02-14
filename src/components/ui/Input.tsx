@@ -9,9 +9,10 @@ interface InputProps {
     placeholder?: string;
     required?: boolean;
     size?: "small" | "middle" | "large";
+    tabIndex?: number;
 }
 
-const UIInput: React.FC<InputProps> = ({ id, label, value, onChange, placeholder, required, size = "large" }) => {
+const UIInput: React.FC<InputProps> = ({ id, label, value, onChange, placeholder, required, size = "large", tabIndex }) => {
     return (
         <div className="ui-input-wrapper">
             <label htmlFor={id} className="sr-only">
@@ -25,6 +26,7 @@ const UIInput: React.FC<InputProps> = ({ id, label, value, onChange, placeholder
                 onChange={onChange}
                 placeholder={placeholder}
                 required={required}
+                tabIndex={tabIndex}
             />
         </div>
     );

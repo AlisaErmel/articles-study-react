@@ -13,6 +13,7 @@ interface SelectProps {
     onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
     options: SelectOption[];
     required?: boolean;
+    tabIndex?: number;
 }
 
 const UISelect: React.FC<SelectProps> = ({
@@ -22,6 +23,7 @@ const UISelect: React.FC<SelectProps> = ({
     onChange,
     options,
     required = false,
+    tabIndex
 }) => {
     return (
         <div className="ui-select-wrapper">
@@ -39,6 +41,7 @@ const UISelect: React.FC<SelectProps> = ({
                     onChange={onChange}
                     required={required}
                     className="ui-select"
+                    tabIndex={tabIndex}
                 >
                     {options.map((option) => (
                         <option key={option.value} value={option.value}>
