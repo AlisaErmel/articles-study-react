@@ -114,64 +114,70 @@ const Create_Module: React.FC = () => {
 
             <div aria-hidden={showInfo}>
 
-                <div className="header-with-info">
-
-                    <h1>Create Your Own Module</h1>
-
-                    <button
-                        ref={infoButtonRef}
-                        onClick={() => setShowInfo(true)}
-                        className="info-button"
-                        aria-label="Open module information"
-                    >
-                        ℹ Info
-                    </button>
-                </div>
-                {/* Horizontal layout container */}
+                {/* Vertical layout container */}
                 <div className="module-creator-container">
-                    {/* Module Settings */}
-                    <fieldset className="module-settings">
-                        <legend>
-                            <span className="section-number">1</span>Module Settings
-                        </legend>
 
-                        <UISelect
-                            id="language-select"
-                            label="Choose language"
-                            value={language}
-                            onChange={(e) => setLanguage(e.target.value as Language)}
-                            required
-                            options={[
-                                { value: "German", label: "German" },
-                                { value: "French", label: "French" },
-                                { value: "Dutch", label: "Dutch" },
-                                { value: "Portuguese", label: "Portuguese" },
-                                { value: "Italian", label: "Italian" },
-                                { value: "Spanish", label: "Spanish" },
-                            ]}
-                        />
-                        <UIInput
-                            id="module-name"
-                            label="Module Name"
-                            value={moduleName}
-                            onChange={(e) => setModuleName(e.target.value)}
-                            required
-                            placeholder="Enter module name"
-                            size="small"
-                        />
+                    {/* Module Settings + Header*/}
+                    <section>
+                        {/*Header*/}
+                        <div className="header-with-info">
 
-                        <div className="word-count" aria-live="polite">
-                            <span className={`word-count-icon ${entries.length > 0 ? "active" : ""}`} aria-hidden="true">
-                                <img src={doneIcon} alt="" />
-                            </span>
-                            <span
-                                className="word-count-number"
-                                aria-label={entries.length === 0 ? "No words added" : `${entries.length} words added`}
+                            <h1>Create Your Own Module</h1>
+
+                            <button
+                                ref={infoButtonRef}
+                                onClick={() => setShowInfo(true)}
+                                className="info-button"
+                                aria-label="Open module information"
                             >
-                                {entries.length}
-                            </span>
+                                ℹ Info
+                            </button>
                         </div>
-                    </fieldset>
+
+                        {/*Module Settings*/}
+                        <fieldset className="module-settings">
+                            <legend>
+                                <span className="section-number">1</span>Module Settings
+                            </legend>
+
+                            <UISelect
+                                id="language-select"
+                                label="Choose language"
+                                value={language}
+                                onChange={(e) => setLanguage(e.target.value as Language)}
+                                required
+                                options={[
+                                    { value: "German", label: "German" },
+                                    { value: "French", label: "French" },
+                                    { value: "Dutch", label: "Dutch" },
+                                    { value: "Portuguese", label: "Portuguese" },
+                                    { value: "Italian", label: "Italian" },
+                                    { value: "Spanish", label: "Spanish" },
+                                ]}
+                            />
+                            <UIInput
+                                id="module-name"
+                                label="Module Name"
+                                value={moduleName}
+                                onChange={(e) => setModuleName(e.target.value)}
+                                required
+                                placeholder="Enter module name"
+                                size="small"
+                            />
+
+                            <div className="word-count" aria-live="polite">
+                                <span className={`word-count-icon ${entries.length > 0 ? "active" : ""}`} aria-hidden="true">
+                                    <img src={doneIcon} alt="" />
+                                </span>
+                                <span
+                                    className="word-count-number"
+                                    aria-label={entries.length === 0 ? "No words added" : `${entries.length} words added`}
+                                >
+                                    {entries.length}
+                                </span>
+                            </div>
+                        </fieldset>
+                    </section>
 
                     {/* Add Word Section */}
                     <section aria-labelledby="add-word-heading">
