@@ -5,6 +5,7 @@ import UISelect from "../components/ui/Select";
 import doneIcon from "../assets/interface/done.svg";
 import PlusIcon from "../assets/interface/plus.svg";
 import StartCreate from '../assets/interface/start_create.svg';
+import ArrowButton from "../components/ui/ArrowButton";
 
 type Language =
     | "German"
@@ -33,6 +34,7 @@ const Create_Module: React.FC = () => {
     const infoButtonRef = React.useRef<HTMLButtonElement>(null);
     const modalRef = React.useRef<HTMLDivElement>(null);
 
+    const [activeSection, setActiveSection] = useState<string>("module-settings");
 
     const handleAdd = () => {
         if (!noun.trim() || !translation.trim()) {
@@ -51,6 +53,7 @@ const Create_Module: React.FC = () => {
         setArticle("");
         setTranslation("");
         setError("");
+        document.getElementById("noun")?.focus();
     };
 
     const closeModal = () => {
@@ -92,7 +95,7 @@ const Create_Module: React.FC = () => {
                     }
                 });
             },
-            { threshold: 0.1 }
+            { threshold: 0.3 }
         );
 
         sections.forEach((sec) => observer.observe(sec));
@@ -139,7 +142,7 @@ const Create_Module: React.FC = () => {
                 <div className="module-creator-container">
 
                     {/* Module Settings + Header*/}
-                    <section aria-label="Module Settings">
+                    <section id="module-settings" aria-label="Module Settings" inert={activeSection !== "module-settings"}>
                         {/*Header*/}
                         <div className="header-with-info">
 
@@ -198,10 +201,29 @@ const Create_Module: React.FC = () => {
                                 </span>
                             </div>
                         </fieldset>
+
+                        {/* 1 → 2 */}
+                        <ArrowButton
+                            targetId="add-word"
+                            direction="down"
+                            text="Add a Word"
+                            onActivateSection={(id) => setActiveSection(id)}
+                            tabIndex={activeSection === "module-settings" ? 0 : -1}
+                        />
                     </section>
 
                     {/* Add Word Section */}
-                    <section aria-labelledby="add-word-heading">
+                    <section id="add-word" aria-labelledby="add-word-heading" inert={activeSection !== "add-word"}>
+
+                        {/* 2 → 1 (above 2nd section) */}
+                        <ArrowButton
+                            targetId="module-settings"
+                            direction="up"
+                            text="Module Settings"
+                            onActivateSection={(id) => setActiveSection(id)}
+                            tabIndex={activeSection === "add-word" ? 0 : -1}
+                        />
+
                         <h2 id="add-word-heading" className="add-word-heading">
                             <span className="section-number">2</span>Add a Word
                         </h2>
@@ -254,10 +276,29 @@ const Create_Module: React.FC = () => {
                             <img src={PlusIcon} aria-hidden="true" />
                             Add a word
                         </button>
+
+                        {/* 2 → 3 (below 2nd section) */}
+                        <ArrowButton
+                            targetId="module-preview"
+                            direction="down"
+                            text="Module Preview"
+                            onActivateSection={(id) => setActiveSection(id)}
+                            tabIndex={activeSection === "add-word" ? 0 : -1}
+                        />
                     </section>
 
                     {/* Preview Section */}
-                    <section className="module-preview-section" aria-labelledby="preview-heading">
+                    <section id="module-preview" className="module-preview-section" aria-labelledby="preview-heading" inert={activeSection !== "module-preview"}>
+                        {/* 3 → 2 (above 3rd section) */}
+                        <ArrowButton
+                            targetId="add-word"
+                            direction="up"
+                            text="Add a Word"
+                            onActivateSection={(id) => setActiveSection(id)}
+                            tabIndex={activeSection === "module-preview" ? 0 : -1}
+                        />
+
+
                         <h2 id="preview-heading" className="preview-heading">
                             <span className="section-number">3</span>Module Preview
                         </h2>

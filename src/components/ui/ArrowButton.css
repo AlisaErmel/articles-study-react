@@ -1,0 +1,45 @@
+.arrow-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    /* fade effect */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    animation: fadeInArrow 0.6s forwards;
+}
+
+.arrow-button:hover,
+.arrow-button:focus-visible {
+    opacity: 1;
+    outline: 4px solid #005fcc;
+}
+
+.arrow-button.up img {
+    transform: rotate(180deg);
+}
+
+.arrow-button img {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.arrow-label {
+    font-size: 0.9rem;
+    color: #005fcc;
+    text-align: center;
+    max-width: 120px;
+}
+
+@keyframes fadeInArrow {
+    to {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+}
