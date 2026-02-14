@@ -79,6 +79,27 @@ const Create_Module: React.FC = () => {
         };
     }, [showInfo]);
 
+    // --- Add the effect for fade-in sections
+    React.useEffect(() => {
+        const sections = document.querySelectorAll(".module-creator-container > section");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        entry.target.removeAttribute("aria-hidden");
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        sections.forEach((sec) => observer.observe(sec));
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <>
             {showInfo && (
@@ -118,7 +139,7 @@ const Create_Module: React.FC = () => {
                 <div className="module-creator-container">
 
                     {/* Module Settings + Header*/}
-                    <section>
+                    <section aria-label="Module Settings">
                         {/*Header*/}
                         <div className="header-with-info">
 

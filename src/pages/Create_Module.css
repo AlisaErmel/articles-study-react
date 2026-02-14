@@ -12,11 +12,18 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 10vh 2rem;
+    padding: 0 2rem;
     /*10vh aligns more centered visually*/
     box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+.module-creator-container>section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* Module Settings column */
 .module-settings {
