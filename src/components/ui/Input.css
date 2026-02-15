@@ -78,20 +78,28 @@
 @media (max-width: 1024px) {
     .ui-input-large {
         width: 20ch;
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+
+    .ui-input-large::placeholder {
+        font-size: 2rem;
     }
 
     .ui-input-middle {
-        width: 8ch;
-        font-size: 1.8rem;
+        width: 10ch;
+        font-size: 1.7rem;
+    }
+
+    .ui-input-middle::placeholder {
+        font-size: 1.7rem;
     }
 
     .ui-input-small {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 
     .ui-input-small::placeholder {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -130,6 +138,60 @@
 
     .ui-input-small {
         font-size: 1.3rem;
+    }
+
+    .ui-input-small::placeholder {
+        font-size: 1.3rem;
+    }
+}
+
+/*For devices with small height*/
+@media (max-height: 730px) and (max-width: 400px) {
+    .ui-input-large {
+        width: 20ch;
+        font-size: 1.2rem;
+        height: 3rem;
+    }
+
+    .ui-input-middle {
+        width: 9ch;
+        font-size: 1.2rem;
+        height: 3rem;
+    }
+
+    .ui-input-middle::placeholder {
+        font-size: 1.2rem;
+    }
+
+    .ui .ui-input-small {
+        font-size: 1.2rem;
+    }
+
+    .ui-input-small::placeholder {
+        font-size: 1.3rem;
+    }
+}
+
+/*For wide devices*/
+@media (max-height: 730px) and (max-width: 1024px) {
+    .ui-input-large {
+        width: 20ch;
+        font-size: 1.2rem;
+        height: 2rem;
+    }
+
+    .ui-input-middle {
+        width: 9ch;
+        font-size: 1.2rem;
+        height: 2rem;
+    }
+
+    .ui-input-middle::placeholder {
+        font-size: 1.2rem;
+    }
+
+    .ui .ui-input-small {
+        font-size: 1.2rem;
     }
 
     .ui-input-small::placeholder {

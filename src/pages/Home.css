@@ -113,9 +113,9 @@ ul.home-buttons {
     }
 
     .list-languages ul.languages {
-        display: grid;
+        display: flex;
         grid-template-columns: repeat(3, 1fr);
-        justify-items: center;
+        justify-content: center;
     }
 
     .list-languages {

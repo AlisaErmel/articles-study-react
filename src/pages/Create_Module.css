@@ -7,6 +7,7 @@
 
 .module-creator-container>section {
     min-height: 100vh;
+    min-height: 100dvh;
     scroll-margin-top: 5rem;
     display: flex;
     flex-direction: column;
@@ -212,6 +213,13 @@
     section {
         max-width: 500px;
     }
+
+    .header-with-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0;
+    }
 }
 
 /* Max width 768px */
@@ -234,10 +242,39 @@
         /*height: 50%;*/
         padding: 1.5rem;
     }
+}
+
+/* For really short devices, reduce min-height slightly */
+@media (max-height: 730px) and (max-width: 400px) {
+
+    .module-settings legend {
+        font-size: 1.4rem;
+    }
 
     .header-with-info {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        font-size: smaller;
+    }
+
+    .add-word-heading,
+    .preview-heading {
+        font-size: 1.3rem;
+    }
+}
+
+/*For wide devices*/
+@media (max-height: 730px) and (max-width: 1024px) {
+
+    .module-settings legend {
+        font-size: 1.4rem;
+    }
+
+    .header-with-info {
+        gap: 0rem;
+        font-size: smaller;
+    }
+
+    .add-word-heading,
+    .preview-heading {
+        font-size: 1.3rem;
     }
 }
