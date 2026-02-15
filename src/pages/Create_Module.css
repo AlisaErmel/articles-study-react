@@ -23,6 +23,7 @@
 .module-creator-container>section.visible {
     opacity: 1;
     transform: translateY(0);
+    scroll-margin-top: 3.5rem;
 }
 
 /* Module Settings column */

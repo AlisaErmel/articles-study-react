@@ -277,10 +277,24 @@ const Create_Module: React.FC = () => {
                             {error}
                         </div>
 
-                        <button type="button" onClick={handleAdd} className="add-button" tabIndex={activeSection === "add-word" ? 0 : -1}>
-                            <img src={PlusIcon} aria-hidden="true" />
-                            Add a word
-                        </button>
+                        {/* Word count next to Add button */}
+                        <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginTop: "0.5rem" }}>
+                            <div className="word-count" aria-live="polite">
+                                <span className={`word-count-icon ${entries.length > 0 ? "active" : ""}`} aria-hidden="true">
+                                    <img src={doneIcon} alt="" />
+                                </span>
+                                <span
+                                    className="word-count-number"
+                                    aria-label={entries.length === 0 ? "No words added" : `${entries.length} words added`}
+                                >
+                                    {entries.length}
+                                </span>
+                            </div>
+                            <button type="button" onClick={handleAdd} className="add-button" tabIndex={activeSection === "add-word" ? 0 : -1}>
+                                <img src={PlusIcon} aria-hidden="true" />
+                                Add a word
+                            </button>
+                        </div>
 
                         {/* 2 → 3 (below 2nd section) */}
                         <ArrowButton
@@ -307,6 +321,18 @@ const Create_Module: React.FC = () => {
                         <h2 id="preview-heading" className="preview-heading">
                             <span className="section-number">3</span>Module Preview
                         </h2>
+
+                        <div className="word-count" aria-live="polite">
+                            <span className={`word-count-icon ${entries.length > 0 ? "active" : ""}`} aria-hidden="true">
+                                <img src={doneIcon} alt="" />
+                            </span>
+                            <span
+                                className="word-count-number"
+                                aria-label={entries.length === 0 ? "No words added" : `${entries.length} words added`}
+                            >
+                                {entries.length}
+                            </span>
+                        </div>
 
                         {entries.length === 0 ? (
                             <p>No words added yet.</p>
