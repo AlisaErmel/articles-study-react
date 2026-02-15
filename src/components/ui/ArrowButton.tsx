@@ -13,7 +13,11 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ targetId, direction, text, on
     const handleActivate = () => {
         const target = document.getElementById(targetId);
         if (target) {
-            target.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+            //For motion-sensitive users
+            const prefersReducedMotion = window
+                .matchMedia("(prefers-reduced-motion: reduce)")
+                .matches;
+            target.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start", inline: "nearest" });
             onActivateSection?.(targetId);
         }
     };
@@ -22,12 +26,6 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ targetId, direction, text, on
         <button
             className={`arrow-button ${direction}`}
             onClick={handleActivate}     // mouse click
-            onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") { // keyboard activation
-                    e.preventDefault(); // prevent space from scrolling
-                    handleActivate();
-                }
-            }}
             tabIndex={tabIndex}
         >
             <img src={ArrowIcon} alt="" aria-hidden="true" />

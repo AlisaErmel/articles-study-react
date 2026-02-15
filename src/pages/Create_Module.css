@@ -7,6 +7,7 @@
 
 .module-creator-container>section {
     min-height: 100vh;
+    scroll-margin-top: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
