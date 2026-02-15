@@ -14,7 +14,7 @@
     padding: 0 2rem;
     /*10vh aligns more centered visually*/
     box-sizing: border-box;
-    opacity: 0;
+    opacity: 1;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
