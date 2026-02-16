@@ -46,14 +46,6 @@
     padding: 0 0.5rem;
 }
 
-/* Add Word column */
-.add-word-section {
-    flex: 2 1 400px;
-    display: flow-root;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
 .add-word-heading,
 .preview-heading {
     font-size: 1.5rem;
@@ -109,23 +101,12 @@
 }
 
 /* Layout container */
-.input-layout {
-    display: flex;
+.input-rows {
+    display: inline-flex;
     flex-direction: column;
     gap: 0.5rem;
-    align-items: center;
-}
-
-/* Row for bottom inputs */
-.input-row {
-    display: flow-root;
-    gap: 1rem;
-}
-
-/* Make both inputs in the row equal width*/
-.input-row .ui-input-wrapper {
-    flex: 1;
-    min-width: 150px;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .word-count {
@@ -227,11 +208,6 @@
     .module-creator-container {
         flex-direction: column;
         align-items: center;
-    }
-
-    .input-row {
-        flex-direction: column;
-        gap: 0.8rem;
     }
 }
 

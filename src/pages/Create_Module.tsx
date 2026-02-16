@@ -215,7 +215,7 @@ const Create_Module: React.FC = () => {
                     </section>
 
                     {/* Add Word Section */}
-                    <section id="add-word" aria-labelledby="add-word-heading">
+                    <section id="add-word" aria-labelledby="add-word-heading" className="add-word-section">
 
                         {/* 2 → 1 (above 2nd section) */}
                         <ArrowButton
@@ -230,8 +230,8 @@ const Create_Module: React.FC = () => {
                             <span className="section-number">2</span>Add a Word
                         </h2>
 
-                        <div className="input-layout">
-                            {/* Top input */}
+                        {/* 3 Inputs */}
+                        <div className="input-rows">
                             <UIInput
                                 id="noun"
                                 label="Noun"
@@ -243,29 +243,26 @@ const Create_Module: React.FC = () => {
                                 tabIndex={activeSection === "add-word" ? 0 : -1}
                             />
 
-                            {/* Bottom row: Article + Translation */}
-                            <div className="input-row">
-                                <UIInput
-                                    id="article"
-                                    label="Article (optional)"
-                                    value={article}
-                                    onChange={(e) => setArticle(e.target.value)}
-                                    placeholder="Enter article"
-                                    size="middle"
-                                    tabIndex={activeSection === "add-word" ? 0 : -1}
-                                />
+                            <UIInput
+                                id="article"
+                                label="Article (optional)"
+                                value={article}
+                                onChange={(e) => setArticle(e.target.value)}
+                                placeholder="Enter article"
+                                size="middle"
+                                tabIndex={activeSection === "add-word" ? 0 : -1}
+                            />
 
-                                <UIInput
-                                    id="translation"
-                                    label="Translation"
-                                    value={translation}
-                                    onChange={(e) => setTranslation(e.target.value)}
-                                    required
-                                    placeholder="Enter translation"
-                                    size="large"
-                                    tabIndex={activeSection === "add-word" ? 0 : -1}
-                                />
-                            </div>
+                            <UIInput
+                                id="translation"
+                                label="Translation"
+                                value={translation}
+                                onChange={(e) => setTranslation(e.target.value)}
+                                required
+                                placeholder="Enter translation"
+                                size="large"
+                                tabIndex={activeSection === "add-word" ? 0 : -1}
+                            />
                         </div>
 
                         {/* Error message */}
