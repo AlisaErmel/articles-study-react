@@ -1,265 +1,142 @@
+h1 {
+    text-align: center;
+}
+
+/*Home navigation buttons*/
+
+.home-actions {
+    font-size: 1.3rem;
+}
+
 .home-button {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    padding: 0.5rem 1.5rem;
-    border-radius: 30px;
-    border: 3px solid #000;
+    gap: 0.5em;
+    padding: 0.3em 1em;
+    border-radius: 2em;
+    border: 0.2em solid #000;
     background-color: #fff;
     color: #000;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2em;
 }
 
 a.home-button:hover,
 a.home-button:focus-visible {
     border-color: #0033cc;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(22, 72, 221, 0.615);
+    box-shadow: 0 0 0 0.2em rgba(22, 72, 221, 0.615);
 }
 
 
 ul.home-buttons {
     display: flex;
-    justify-content: left;
-    gap: 1rem;
+    gap: 1em;
     list-style: none;
     padding: 0;
-    margin-top: 25px;
+    margin-top: 1em;
 }
 
 .home-button img {
-    width: 30px;
-    height: 30px;
+    width: 1.2em;
+    height: 1.2em;
     object-fit: contain;
 }
 
-.list-languages {
-    display: flex;
-    align-items: last baseline;
-    gap: 20px;
-}
+/*Supported Languages section*/
 
-/*.list-languages h2 {
-    margin: 0;
-}*/
+.list-languages {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    font-size: 1rem;
+}
 
 .list-languages ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 10px;
+    gap: 1em;
 }
 
 .list-languages li {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 140px;
-    height: 42px;
-    border-radius: 20px;
-    border: 3px solid #000000;
+    width: 9em;
+    height: 2.5em;
+    border-radius: 2em;
+    border: 0.2em solid #000000;
     font-weight: bold;
     text-decoration: none;
-    margin: 0 5px;
-    gap: 10px;
+    margin: 0 0.2rem;
+    gap: 0.5rem;
 }
 
 .list-languages li img {
-    width: 30px;
-    height: 30px;
+    width: 2em;
+    height: 2em;
     object-fit: contain;
 }
 
-.info {
+/*Info section*/
+
+.info-section {
     font-size: 1.3rem;
+}
+
+.info li {
+    margin: 0.5em;
 }
 
 .highlight {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 115px;
-    height: 20px;
+    width: 7em;
+    height: 1.5em;
     border-radius: 10%;
-    border: 3px solid #0033cc;
+    border: 0.2em solid #0033cc;
     font-weight: bold;
     text-decoration: none;
-    margin: 0 5px;
+    margin: 0.2em;
 }
 
-/* ================= Tablet (max-width: 1024px) ================= */
-@media (max-width: 1024px) {
-    .home-button {
-        font-size: 1.8rem;
-        padding: 0.8rem 1.8rem;
-        border-radius: 5vw;
-        justify-content: center;
+@media (max-width: 64em) {
+    html {
+        font-size: 20px;
     }
 
-    ul.home-buttons {
-        flex-direction: row;
-        gap: 2rem;
-        margin-top: 30px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .home-button img {
-        width: 4vw;
-        height: 4vw;
-    }
-
-    .list-languages ul.languages {
-        display: flex;
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: center;
-    }
-
-    .list-languages {
+    .home-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .list-languages li {
-        width: 25vw;
-        height: 6vw;
-        font-size: 1.5rem;
-        border-radius: 3vw;
-    }
-
-    .list-languages li img {
-        width: 4vw;
-        height: 4vw;
-    }
-
-    .info {
-        font-size: 1.5rem;
-    }
-
-    .highlight {
-        width: 130px;
-        height: 20px;
-    }
-
-    h2#supported-languages {
-        font-size: 1.8rem;
-    }
-
-    h3#info-section,
-    h3 {
-        font-size: 1.5rem;
-    }
-}
-
-/* ================= Small tablet (max-width: 768px) ================= */
-@media (max-width: 768px) {
-    .home-button {
-        font-size: 1.5rem;
-        padding: 0.8rem 1.5rem;
-        border-radius: 40px;
-        justify-content: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        box-sizing: border-box;
     }
 
     ul.home-buttons {
-        flex-direction: row;
-        gap: 1.8rem;
-        margin-top: 30px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .home-button img {
-        width: 32px;
-        height: 32px;
-    }
-
-    .list-languages li {
-        width: 25vw;
-        height: 6vw;
-        font-size: 1.3rem;
-        border-radius: 6vw;
-        padding: 0.2vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1vw;
-    }
-}
-
-/* ================= Mobile (max-width: 570px) ================= */
-@media (max-width: 570px) {
-    .home-button {
-        font-size: 1.6rem;
-        padding: 0.5rem 1.2rem;
-        border-radius: 40px;
-        justify-content: center;
-    }
-
-    ul.home-buttons {
-        flex-direction: column;
-        gap: 1.8rem;
-        margin-top: 30px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .home-button img {
-        width: 32px;
-        height: 32px;
-    }
-
-    .list-languages ul.languages {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        justify-items: center;
-        gap: 1rem;
-    }
-
-    .list-languages {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .list-languages li {
-        width: 48vw;
-        height: 10vw;
-        font-size: 1.5rem;
-        border-radius: 5vw;
-        padding: 1.5vw;
-        display: flex;
-        align-items: center;
         justify-content: center;
-        gap: 1vw;
     }
+}
 
-    .list-languages li img {
-        width: 8vw;
-        height: 8vw;
+@media (max-width: 40em) {
+    html {
+        font-size: 15px;
     }
+}
 
-    .info {
-        font-size: 1.3rem;
-        text-align: left;
-    }
-
-    .highlight {
-        width: 120px;
-        height: 16px;
-    }
-
-    h2#supported-languages {
-        font-size: 1.6rem;
-        text-align: center;
-    }
-
-    h3#info-section,
-    h3 {
-        font-size: 1.5rem;
-        text-align: center;
+@media (max-width: 21em) {
+    html {
+        font-size: 13px;
     }
 }

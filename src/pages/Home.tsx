@@ -31,7 +31,7 @@ const Home: React.FC = () => {
                     </ul>
                 </section>
 
-                <section aria-labelledby="info-section">
+                <section aria-labelledby="info-section" className="info-section">
                     <h3 id="info-section">How it works?</h3>
                     <ul className="info">
                         <li>
@@ -46,7 +46,7 @@ const Home: React.FC = () => {
                     </ul>
                 </section>
 
-                <nav aria-label="Home actions">
+                <nav aria-label="Home actions" className="home-actions">
                     <h3>Choose what you want to do today:</h3>
                     <ul className="home-buttons">
                         <li>
