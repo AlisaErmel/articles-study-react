@@ -29,8 +29,8 @@
 
 /* Module Settings column */
 .module-settings {
-    border: 4px solid #005fcc;
-    border-radius: 8px;
+    border: 0.3rem solid #005fcc;
+    border-radius: 0.5rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -44,6 +44,7 @@
     font-weight: bold;
     color: #005fcc;
     padding: 0 0.5rem;
+    text-align: center;
 }
 
 .add-word-heading,
@@ -75,7 +76,7 @@
     background: white;
     padding: 2rem;
     max-width: 400px;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     outline: none;
 }
 
@@ -142,6 +143,8 @@
     cursor: pointer;
     border: none;
     margin: 0rem auto 0 auto;
+    font-size: 1.5rem;
+    padding: 0.5rem;
 }
 
 .add-button img {
@@ -151,7 +154,7 @@
 
 /* Focus visible */
 .add-button:focus-visible {
-    outline: 4px solid #005fcc;
+    outline: 0.25rem solid #005fcc;
 }
 
 .close-module-button {
@@ -167,7 +170,7 @@
 }
 
 .close-module-button:focus-visible {
-    outline: 4px solid #005fcc;
+    outline: 0.25rem solid #005fcc;
 }
 
 .section-number {
@@ -184,17 +187,7 @@
     line-height: 1.8rem;
 }
 
-/* Responsive breakpoints */
-
-/* Max width 1024px */
-@media (max-width: 1024px) {
-
-    .module-settings,
-    .module-preview-section,
-    section {
-        max-width: 500px;
-    }
-
+@media (max-width: 64em) {
     .header-with-info {
         flex-direction: column;
         align-items: center;
@@ -203,54 +196,9 @@
     }
 }
 
-/* Max width 768px */
-@media (max-width: 768px) {
-    .module-creator-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* Max width 570px */
-@media (max-width: 570px) {
+@media (max-width: 40em) {
     .modal-content {
         width: 70%;
-        /*height: 50%;*/
         padding: 1.5rem;
-    }
-}
-
-/* For really short devices, reduce min-height slightly */
-@media (max-height: 730px) and (max-width: 400px) {
-
-    .module-settings legend {
-        font-size: 1.4rem;
-    }
-
-    .header-with-info {
-        font-size: smaller;
-    }
-
-    .add-word-heading,
-    .preview-heading {
-        font-size: 1.3rem;
-    }
-}
-
-/*For wide devices*/
-@media (max-height: 730px) and (max-width: 1024px) {
-
-    .module-settings legend {
-        font-size: 1.4rem;
-    }
-
-    .header-with-info {
-        gap: 0rem;
-        font-size: smaller;
-    }
-
-    .add-word-heading,
-    .preview-heading {
-        font-size: 1.3rem;
     }
 }
