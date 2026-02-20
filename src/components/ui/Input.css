@@ -76,3 +76,21 @@
 .ui-input-middle::placeholder {
     font-size: 1.8rem;
 }
+
+@media (max-width: 64em) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 23em) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 20em) {
+    html {
+        font-size: 10px;
+    }
+}
