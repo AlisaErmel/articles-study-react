@@ -17,7 +17,7 @@
 .arrow-button:hover,
 .arrow-button:focus-visible {
     opacity: 1;
-    outline: 4px solid #005fcc;
+    outline: 0.25rem solid #005fcc;
 }
 
 .arrow-button.up img {
@@ -44,7 +44,7 @@
     }
 }
 
-@media (max-height: 730px) and (max-width: 1024px) {
+@media (max-height: 46em) and (max-width: 64em) {
     .arrow-button {
         margin: 0.4rem;
     }
